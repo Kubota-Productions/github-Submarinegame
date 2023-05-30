@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1927853411
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1927853412}
+  m_Layer: 0
+  m_Name: holdarea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1927853412
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927853411}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.105, z: 2.083}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6200931987232507963}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1108118375059343628
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,10 +313,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6200931987232507964}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.71, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1927853412}
   m_Father: {fileID: 6200931987409117355}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -384,7 +415,6 @@ GameObject:
   - component: {fileID: 6200931987409117355}
   - component: {fileID: 6200931987409117354}
   - component: {fileID: 6200931987409117357}
-  - component: {fileID: 6200931987409117352}
   - component: {fileID: 1510603169484650214}
   m_Layer: 0
   m_Name: topsideplayer
@@ -449,7 +479,7 @@ MonoBehaviour:
   stanceSpeed: 0
   upSpeed: 0
   jumpAmount: 5
-  gravity: 4
+  gravity: 10
   ladderClimbSpeed: 0
   ladderStrafeSpeed: 0
   ladderMaxAngle: 45
@@ -479,25 +509,6 @@ MonoBehaviour:
   isCrouching: 0
   isProning: 0
   submouseOver: {fileID: 1108118375059343628}
---- !u!114 &6200931987409117352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6200931987409117356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 455ffd811bc4ab44fadbee586cadbc0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enableDebugLogs: 1
-  inLadder: 0
-  facingLadder: 0
-  inRope: 0
-  facingRope: 0
-  ladderTransform: {fileID: 0}
-  ropeTransform: {fileID: 0}
 --- !u!114 &1510603169484650214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -510,7 +521,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e36f4be02e7525744ab73e715afceaa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupPoint: {fileID: 0}
-  playerCamera: {fileID: 0}
-  moveForce: 5
+  pickupPoint: {fileID: 1927853412}
+  playerCamera: {fileID: 6200931987232507963}
+  moveForce: 10
   raycastLength: 10
+  heldObject: {fileID: 0}
